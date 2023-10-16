@@ -4,13 +4,13 @@
             <td valign="top">
                 <ul>
                     <li>
-                        <a href="#">Account</a>
+                        <a href="/Kanbas/Account/index.html">Account</a>
                     </li>
                     <li>
                         <a href="#">Dashboard</a>
                     </li>
                     <li>
-                        <a href="#">Courses</a>
+                        <a href="/Kanbas/Courses/index.html">Courses</a>
                     </li>
                     <li>
                         <a href="#">Calendar</a>
@@ -38,13 +38,13 @@
                         <a href="/Kanbas/Courses/Home/home.html">Home</a>
                     </li>
                     <li>
-                        <a href="/Kanbas/Courses/Modules">Modules</a>
+                        <a href="#">Modules</a>
                     </li>
                     <li>
-                        <a href="/Kanbas/Courses/Piaza">Piazza</a>
+                        <a href="#">Piazza</a>
                     </li>
                     <li>
-                        <a href="/Kanbas/Courses/Zoom">Zoom Meetings</a>
+                        <a href="#">Zoom Meetings</a>
                     </li>
                     <li>
                         <a href="/Kanbas/Courses/Assignments/index.html">Assignments</a>
@@ -91,16 +91,55 @@
                 </ul>
             </td>
             <td>
+                <select>
+                    <option>Edit</option>
+                    <option>Speed Grader</option>
+                    <option>Duplicate</option>
+                    <option>Delete</option>
+                    <option>Move to...</option>
+                    <option>Send to...</option>
+                    <option>Copy to...</option>
+                    <option>Share to Commons</option>
+                </select>
                 <h3>Assignment Name</h3>
-                <form <input value="A1 - ENV + HTML" />
+                <input value="A1 - ENV + HTML" />
+                <br />
 
                 <br />
-                <textarea cols="50" rows="20">This is the description of the assignment</textarea>
+                <textarea cols="50" rows="10">This is the description of the assignment</textarea>
+                <br />
                 <br />
                 <label for="points">Points</label>
                 <br />
                 <input id="points" max="100" min="50" step="5" type="number" value="100" />
                 <br />
+                <br />
+
+                <label for="assignment group">Assignment Group</label>
+                <br />
+                <select id="assignment group">
+                    <option>ASSIGNMENTS</option>
+                    <option>QUIZZES</option>
+                    <option>EXAMS</option>
+                    <option>PROJECTS</option>
+                </select>
+                <br /><br />
+
+                <label for="displayGrade">Display Grade as</label>
+                <br />
+                <select id="displayGrade">
+                    <option>Percentage</option>
+                </select>
+                <br /><br />
+
+                <label for="submissionType">Submission Type</label>
+                <br />
+                <select id="submissionType">
+                    <option>Online</option>
+                </select>
+                <br /><br />
+
+
                 Online Entry Options
                 <br />
                 <input id="text-entry" type="checkbox" />
@@ -113,22 +152,55 @@
                 <input type="checkbox" /> Annotation
                 <br />
                 <input type="checkbox" /> Uploads
-                <br />
+                <br /><br />
 
+                <label for="submissionAttempts">Submission Attempts</label>
                 <br />
+                <select id="submissionAttempts">
+                    <option>Unlimited</option>
+                </select>
+                <br /><br />
+
+                <label for="plagiarismReview">Plagiarism Review</label>
                 <br />
-                <h3>Favorite Genre</h3>
-                <input type="radio" name="genre" value="rock" /> Rock
-                <input type="radio" name="genre" value="pop" /> Pop
-                <input type="radio" name="genre" value="country" /> Country
-                <input type="radio" name="genre" value="hip-hop" /> Hip-Hop
+                <select id="plagiarismReview">
+                    <option>None</option>
+                </select>
+                <br /><br />
 
-                <h3>Favorite Movie Genre</h3>
-                <input type="radio" name="moviegenre" value="action" /> Action
-                <input type="radio" name="moviegenre" value="comedy" /> Comedy
-                <input type="radio" name="moviegenre" value="drama" /> Drama
-                <input type="radio" name="moviegenre" value="horror" /> Horror
+                <label for="groupAssignment">Group Assigment</label>
+                <br />
+                <input type="checkbox" id="groupAssignment" />This is a group assignment
+                <br /><br />
 
-                <h3>Due Dates</h3>
-                <input type="date" value="2023-09-21" min="2023-09-07" max="2023-09-28">
+                <label for="peerReviews">Peer Reviews</label>
+                <br />
+                <input type="checkbox" id="peerReviews" />Require Peer Reviews
+                <br /><br />
+
+                Assign
+                <br />
+                <label for="assignTo">Assign to</label>
+                <br />
+                <input type="text" id="assignTo" placeholder="Everyone"/>
+                <br /><br />
+
+                <label for="dueDate">Due</label>
+                <br />
+                <input type="date" id="dueDate" value="2021-01-01"/>
+                <br /><br />
+
+                <label for="availableFrom">Available From</label>
+                <br />
+                <input type="date" id="availableFrom" value="2021-01-01" min="2021-01-01"/>
+                <br /><br />
+
+                <label for="availableUntil">Until</label>
+                <br />
+                <input type="date" id="availableUntil" value="2021-01-01" max="2021-01-01"/>
+                <br /><br />
+
+                <a href="/Kanbas/Courses/Assignments/index.html"><button>Cancel</button></a>
+                <a href="/Kanbas/Courses/Assignments/index.html"><button>Save</button></a>
+                <br /><br />
             </td>

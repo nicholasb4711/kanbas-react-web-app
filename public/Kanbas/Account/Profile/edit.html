@@ -64,25 +64,40 @@
                 </ul>
             </td>
             <td valign="top">
-                Jose Annunziato's Profile
-                <br />
 
-                <h3>Jose Annunziato
-                    <a href="/Kanbas/Account/Profile/edit.html">
-                        <button>Edit Profile</button>
-                    </a>
-                </h3>
-                <br />
+                <h1>Edit Profile</h1>
+                <form action="/Kanbas/Account/Profile/edit.html">
+                    <label for="fullName">Name: </label>
+                    <input type="text" id="fullName" placeholder="John Doe">
 
-                <h3>Contact</h3>
-                No registered services, you can add some on the <a href="#">settings</a> page. <br />
+                    <label for="pronouns">Pronouns</label>
+                    <select id="pronouns">
+                        <option>None</option>
+                        <option>He/Him</option>
+                        <option>She/Her</option>
+                        <option>Other</option>
+                    </select><br /><br />
 
-                <h3>Biography</h3>
-                Faculty, Software Engineer, AI, Space, and renewables enthusiast. <br />
+                    <label for="title">Title: </label>
+                    <input type="text" id="title"><br />
 
-                <h3>Links</h3>
+                    <h3>Contact</h3>
+                    No registered services, you can add some on the <a href="#">settings</a> page. <br />
+
+                    <h3>Biography</h3>
+                    Faculty, Software Engineer, AI, Space, and renewables enthusiast. <br />
+                    <textarea name="bio" cols="60" rows="5">
+                        Faculty, Software Engineer, AI, Space, and renewables enthusiast.
+                    </textarea>
+                    <br />
+
+                    <h3>Links</h3>
 
 
-
-
+                    <button>Save Profile</button>
+                    <button>Cancel Editing</button>
+                </form>
             </td>
+        </tr>
+    </tbody>
+</table>
