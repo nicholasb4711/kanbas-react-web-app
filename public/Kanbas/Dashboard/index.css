@@ -1,0 +1,42 @@
+.dash-title-header {
+    display: flex;
+    flex: 1;
+    align-items: center; 
+    margin-top: 0px;
+    margin-right: 24px;
+    margin-bottom: 0px;
+    margin-left: 24px;
+    line-height: 1.125;
+    font-size: 2.375rem;
+    font-weight: 300;
+    min-height: 4.5rem;
+    /* border-bottom: 1px solid #c7cdd1; */
+}
+
+.dash-subtitle-header {
+    display: flex;
+    flex: 1;
+    align-items: center; 
+    margin-top: 0px;
+    margin-right: 24px;
+    margin-bottom: 0px;
+    margin-left: 24px;
+    line-height: 1.125;
+    font-size: 1.75rem;
+    font-weight: 400;
+    /* min-height: 4.5rem; */
+    /* border-bottom: 1px solid #c7cdd1; */
+}
+
+.card {
+    margin-top: 30px;
+    margin-bottom: 36px;
+    margin-right: 12px;
+    margin-left: 12px;
+    min-width: 250px;
+    max-width: 270px;
+}
+
+.card-header {
+    height: 146px;
+}
