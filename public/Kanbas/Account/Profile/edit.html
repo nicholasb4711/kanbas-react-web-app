@@ -1,103 +1,188 @@
-<table border="1" width="100%">
-    <tbody>
-        <tr>
-            <td valign="top">
-                <ul>
-                    <li>
-                        <a href="/Kanbas/Account/index.html">Account</a>
-                    </li>
-                    <li>
-                        <a href="#">Dashboard</a>
-                    </li>
-                    <li>
-                        <a href="/Kanbas/Courses/index.html">Courses</a>
-                    </li>
-                    <li>
-                        <a href="#">Calendar</a>
-                    </li>
-                    <li>
-                        <a href="#">Inbox</a>
-                    </li>
-                    <li>
-                        <a href="#">History</a>
-                    </li>
-                    <li>
-                        <a href="#">Studio</a>
-                    </li>
-                    <li>
-                        <a href="#">Commons</a>
-                    </li>
-                    <li>
-                        <a href="#">Help</a>
-                    </li>
-                </ul>
-            </td>
-            <td valign="top">
-                <ul>
-                    <li>
-                        <a href="#">Notifications</a>
-                    </li>
-                    <li>
-                        <a href="/Kanbas/Account/Profile/index.html">Profile</a>
-                    </li>
-                    <li>
-                        <a href="#">Files</a>
-                    </li>
-                    <li>
-                        <a href="#">Settings</a>
-                    </li>
-                    <li>
-                        <a href="#">ePortfolios</a>
-                    </li>
-                    <li>
-                        <a href="#">Shared Content</a>
-                    </li>
-                    <li>
-                        <a href="#">The Hub</a>
-                    </li>
-                    <li>
-                        <a href="#">Qwickly Course Tools</a>
-                    </li>
-                    <li>
-                        <a href="#">Global Announcements</a>
-                    </li>
-                </ul>
-            </td>
-            <td valign="top">
+<html>
 
-                <h1>Edit Profile</h1>
-                <form action="/Kanbas/Account/Profile/edit.html">
-                    <label for="fullName">Name: </label>
-                    <input type="text" id="fullName" placeholder="John Doe">
+<head>
+    <link rel="stylesheet" href="/vendors/fontawesome/css/all.css" />
+    <link rel="stylesheet" href="/vendors/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="/Kanbas/index.css" />
+    <link rel="stylesheet" href="/Kanbas/Account/index.css" />
+    <link rel="stylesheet" href="/Kanbas/Account/Profile/index.css" />
+</head>
 
-                    <label for="pronouns">Pronouns</label>
-                    <select id="pronouns">
-                        <option>None</option>
-                        <option>He/Him</option>
-                        <option>She/Her</option>
-                        <option>Other</option>
-                    </select><br /><br />
+<body>
+    <div class="row">
+        <div class="col-2">
+            <ul class="list-group wd-kanbas-navigation">
+                <img src="/images/NU_Logo.png">
+                <li class="list-group-item active">
+                    <a href="/Kanbas/Account/index.html">
+                        <i class="fas fa-user-circle menu-icon" style="color: lightgray;"></i>
+                        <br>
+                        Account
+                    </a>
+                <li class="list-group-item">
+                    <a href="#">
+                        <i class="fas fa-tachometer-alt menu-icon" style="color: #D41B2C;"></i>
+                        <br>
+                        Dashboard
+                    </a>
+                </li>
+                <li class="list-group-item">
+                    <a href="/Kanbas/Courses/index.html">
+                        <i class="fas fa-book menu-icon" style="color: #D41B2C;"></i>
+                        </br>
+                        Courses</a>
+                </li>
+                <li class="list-group-item">
+                    <a href="#">
+                        <i class="far fa-calendar-alt menu-icon" style="color: #D41B2C;"></i>
+                        <br>
+                        Calendar</a>
+                </li>
+                <li class="list-group-item">
+                    <a href="#">
+                        <i class="fas fa-inbox menu-icon" style="color: #D41B2C;"></i>
+                        <br>
+                        Inbox</a>
+                </li>
+                <li class="list-group-item">
+                    <a href="#">
+                        <i class="fas fa-history menu-icon" style="color: #D41B2C;"></i>
+                        <br>
+                        History</a>
+                </li>
+                <li class="list-group-item">
+                    <a href="#">
+                        <i class="fas fa-network-wired menu-icon" style="color: #D41B2C;"></i>
+                        <br>
+                        Studio</a>
+                </li>
+                <li class="list-group-item"><a href="#">Commons</a></li>
+                <li class="list-group-item">
+                    <a href="#">
+                        <i class="far fa-question-circle menu-icon" style="color: #D41B2C;"></i>
+                        <br>Help</a>
+                </li>
+            </ul>
+        </div>
+        <div class="col-10">
+            <div class="user-title-header">
+                Jose Annunziato's Profile
+            </div>
+            <div class="d-flex">
+                <div class="d-flex-col left-content-wrapper list-group">
+                    <ul class="list-group wd-account-navigation">
+                        <li class="list-group-item">
+                            <a href="#">Notifications</a>
+                        </li>
+                        <li class="list-group-item active">
+                            <a href="/Kanbas/Account/Profile/index.html">Profile</a>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="#">Files</a>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="#">Settings</a>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="#">ePortfolios</a>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="#">Shared Content</a>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="#">The Hub</a>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="#">Qwickly Course Tools</a>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="#">Global Announcements</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="d-flex-col right-content-wrapper">
+                    <div class="d-flex justify-content-between">
+                        <i class="fas fa-user-circle user-icon" style="color: lightgray;"></i>
 
-                    <label for="title">Title: </label>
-                    <input type="text" id="title"><br />
+                        <a class="float-end" href="/Kanbas/Account/Profile/index.html">
+                            <button type="button" class="btn btn-light">
+                                <i class="far fa-edit" style="color: black;"></i>
+                                Cancel Editing
+                            </button>
+                        </a>
+                    </div>
+                    <form action="/Kanbas/Account/Profile/edit.html" style="border-bottom: 1px solid #c7cdd1;">
+                        <div class="d-flex flex-column">
+                            <div class="mb-3">
+                                <label for="inputName" class="form-label">Name:*</label>
+                                <input type="text" class="form-control" id="inputName">
+                            </div>
+                            <div class="mb-3">
+                                <label for="pronouns" class="form-label">Pronouns</label>
+                                <select id="pronouns" class="form-select">
+                                    <option>None</option>
+                                    <option>He/Him</option>
+                                    <option>She/Her</option>
+                                    <option>Other</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="title" class="form-label">Title: </label>
+                                <input type="text" id="title" class="form-control"><br />
+                            </div>
+                            <h3>Contact</h3>
+                            <p>No registered services, you can add some on the <a href="#">settings</a> page.</p>
 
-                    <h3>Contact</h3>
-                    No registered services, you can add some on the <a href="#">settings</a> page. <br />
+                            <div class="mb-3">
+                                <h3>Biography</h3>
+                                <textarea class="form-control" id="bio" cols="60" rows="5">Faculty, Software Engineer, AI, Space, and renewables enthusiast.
+                                </textarea>
+                            </div>
 
-                    <h3>Biography</h3>
-                    Faculty, Software Engineer, AI, Space, and renewables enthusiast. <br />
-                    <textarea name="bio" cols="60" rows="5">
-                        Faculty, Software Engineer, AI, Space, and renewables enthusiast.
-                    </textarea>
-                    <br />
+                            <div class="mb-3">
+                                <h3>Links</h3>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <p style="font-weight: bold;">Title</p>
+                                        <input aria-label="Link Title" type="text" class="form-control mb-2"
+                                            maxlength="255" name="link_titles[]" value="Youtube">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p style="font-weight: bold;">URL</p>
+                                        <input aria-label="Link Url" type="text" class="form-control mb-2"
+                                            name="link_urls[]" value="https://www.youtube.com/@WebDevTV">
+                                    </div>
+                                </div>
 
-                    <h3>Links</h3>
+                                <!-- Add another link button -->
+                                <button type="button" class="btn btn-light">
+                                    Add another link
+                                </button>
+                            </div>
+
+                        </div>
+                    </form>
+                    <div class="d-flex float-end">
+                        <a href="/Kanbas/Account/Profile/index.html">
+                            <button type="button" class="btn btn-light cancelsavebtn">
+                                Cancel
+                            </button>
+                        </a>
+                        <a href="/Kanbas/Account/Profile/index.html">
+                            <button type="button" class="btn btn-danger cancelsavebtn">
+                                Save Profile
+                            </button>
+                        </a>
+
+                    </div>
 
 
-                    <button>Save Profile</button>
-                    <button>Cancel Editing</button>
-                </form>
-            </td>
-        </tr>
-    </tbody>
-</table>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+
+</html>
