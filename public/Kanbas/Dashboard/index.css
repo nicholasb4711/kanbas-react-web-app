@@ -31,12 +31,27 @@
 .card {
     margin-top: 30px;
     margin-bottom: 36px;
-    margin-right: 12px;
-    margin-left: 12px;
+    margin-right: 6px;
+    margin-left: 6px;
     min-width: 250px;
     max-width: 270px;
 }
 
 .card-header {
     height: 146px;
+}
+
+.card-title {
+    color: ;
+}
+
+.content-area-wrapper {
+    flex: 1;
+}
+
+.right-side-wrapper {
+    display: block;
+    max-width: 288px;
+    min-width: 200px;
+    padding-left: 24px;
 }
