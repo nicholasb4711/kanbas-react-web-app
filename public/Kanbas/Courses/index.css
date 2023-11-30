@@ -1,0 +1,228 @@
+ul.wd-course-navigation .list-group-item {
+    border: none;
+    text-align: left;
+    font-size: 1.2em;
+}
+
+ul.wd-course-navigation .list-group-item.active {
+    color: black;
+    background-color: white;
+    border: none;
+    border-left: 2px solid black;
+}
+
+ul.wd-course-navigation .list-group-item.active a {
+    color: black;
+
+}
+
+ul.wd-course-navigation a {
+    color: #D41B2C;
+    text-decoration: none;
+}
+
+.class-title-header {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    margin-top: 0px;
+    margin-right: 24px;
+    margin-bottom: 0px;
+    margin-left: 24px;
+    font-size: 1.2em;
+    min-height: 4.5rem;
+}
+
+.top {
+    margin-top: 0px;
+}
+
+.breadcrumb-item a {
+    color: #D41B2C;
+}
+
+.row .main-content {
+    padding-left: .75rem;
+}
+
+.col-2-sidebar {
+    min-width: 190px;
+    max-width: 200px;
+    text-align: left;
+    float: left;
+}
+
+.left-content-wrapper {
+    margin-top: 24px;
+    margin-right: 12px;
+    margin-bottom: 4.5rem;
+}
+
+.right-content-wrapper {
+    margin-top: 24px;
+    margin-left: 24px;
+    margin-bottom: 4.5rem;
+
+}
+
+.user-icon {
+    font-size: 128px;
+    padding: 20px;
+    /* float: left; */
+    /* position: relative; */
+}
+
+.btn-secondary {
+    background: #f5f5f5;
+    color: #2d3b45;
+    border: 1px solid;
+    border-color: #c7cdd1;
+    border-radius: 3px;
+    padding: 8px 14px;
+    margin-right: 5px;
+    font-size: 1rem;
+    /* line-height: 20px; */
+    text-align: center;
+    vertical-align: middle;
+}
+
+.btn-success {
+    background: #16d035;
+    color: #2d3b45;
+    border: 1px solid;
+    border-color: #c7d1ce;
+    border-radius: 3px;
+    padding: 8px 14px;
+    margin-right: 5px;
+    font-size: 1rem;
+    /* line-height: 20px; */
+    text-align: center;
+    vertical-align: middle;
+}
+
+.btn-danger {
+    background: #f5f5f5;
+    border: 1px solid;
+    border-color: #B51726;
+    border-radius: 3px;
+    padding: 8px 14px;
+    font-size: 1rem;
+    margin-right: 5px;
+    /* line-height: 20px; */
+    text-align: center;
+    vertical-align: middle;
+    background-color: #D41B2C;
+    color: white;
+}
+
+.cancelsavebtn {
+    margin: 5px;
+}
+
+/* EDIT PAGE */
+
+.form-label {
+    font-weight: bold;
+    font-size: 1rem;
+    margin-bottom: 1px;
+}
+
+/* MODULES SECTION */
+
+.header-bar {
+    height: 45px;
+    margin-bottom: 12px;
+}
+
+.modules-main {
+    padding: .75rem;
+}
+
+.module-group {
+    border-radius: 0px;
+    margin: 15px;
+    margin-top: 45px;
+}
+
+.module-section-header {
+    color: #3d454c;
+    font-size: 1.125rem;
+    text-shadow: 1px 1px 0 rgba(255,255,255,.5);
+    font-weight: bold;
+    padding-top: 6px;
+    padding-right: 6px;
+    padding-bottom: 6px;
+    padding-left: 6px;
+    min-height: 30px;
+
+}
+
+.module-item-h1 {
+    color: #4C5860;
+    font-size: 1.125rem;
+    display: inline;
+    font-weight: bold;
+    padding-top: 6px;
+    padding-right: 6px;
+    padding-bottom: 6px;
+    padding-left: 6px;
+    vertical-align: middle;
+}
+
+.module-item {
+    color: #4C5860;
+    font-size: 1.125rem;
+    display: inline;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    padding-left: 40px;
+}
+
+.module-item > a {
+    color: #D41B2C;
+    font-size: 1rem;
+    font-weight: normal;
+    text-decoration: none;
+}
+
+.module-align {
+    
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: space-between;
+    align-items: center;
+    height: max-content;
+}
+
+.module-align > i {
+    margin: 5px;
+}
+
+/* RIGHT SIDEBAR SECTION */
+
+.modules-right-sidebar {
+    width: 250px;
+    margin-left: 25px;
+}
+
+.top2 {
+    margin: 0px;
+}
+
+.btn-sidebar-wide {
+    width: 80%;
+    background: #f5f5f5;
+    color: #2d3b45;
+    border: 1px solid;
+    border-color: #c7cdd1;;
+    border-radius: 3px;
+    padding: 8px 14px;
+    margin-right: 5px;
+    margin-top: 5px;
+    font-size: 1rem;
+    /* line-height: 20px; */
+    text-align: center;
+    vertical-align: middle;
+}
