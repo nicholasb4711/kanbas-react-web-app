@@ -28,6 +28,17 @@
     /* border-bottom: 1px solid #c7cdd1; */
 }
 
+.dash-course-link {
+    text-decoration: none;
+    color: inherit;
+    margin-bottom: 15px;
+}
+
+.dash-course-link:hover {
+    color: #D41B2C;
+    text-decoration: underline;
+}
+
 .card {
     margin-top: 30px;
     margin-bottom: 36px;
