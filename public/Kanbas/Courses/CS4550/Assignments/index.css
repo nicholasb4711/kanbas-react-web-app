@@ -1,0 +1,46 @@
+/* ASSIGNMENTS */
+
+.assigments-main {
+    width: max-content;
+    margin-right: 1.5rem;
+}
+
+.assignments-content {
+    margin: 1rem;
+    margin-top: 1.5rem;
+}
+
+.assignments-list {
+    border-radius: 0px;
+}
+
+.assignments-info {
+    margin-left: 12px;
+    margin-right: 24px;
+    overflow-wrap: break-word;
+    flex: 1;
+    min-width: 1px;
+}
+
+.assignment-h1 > a {
+    font-weight: bold;
+    padding-right: 12px;
+    line-height: 1.3;
+    margin-bottom: 3px;
+    min-width: 1px;
+    color:#3a3d3f;
+    text-decoration: none;
+}
+
+.assignment-h1 > a:hover {
+    text-decoration: underline;
+}
+
+.assignment-details {
+        /* font-size: 12px; */
+        font-size: 0.75rem;
+        box-sizing: border-box;
+        display: flex;
+        flex-wrap: wrap;
+    
+}
