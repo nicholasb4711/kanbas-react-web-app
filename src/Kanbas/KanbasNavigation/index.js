@@ -15,18 +15,21 @@ function KanbasNavigation() {
   };
 
   const { pathname } = useLocation();
+
   return (
-    <div className="list-group" style={{ width: 150 }}>
-      {links.map((link, index) => (
-        <Link
-          key={index}
-          to={`/Kanbas/${link}`}
-          className={`list-group-item ${pathname.includes(link) && "active"}`}>
+      <div className="list-group" style={{ width: 150 }}>
+        <img src="/images/NU_Logo.png"></img>
+        {links.map((link, index) => (
+          <Link
+            key={index}
+            to={`/Kanbas/${link}`}
+            className={`list-group-item ${pathname.includes(link) && "active"}`}>
             {linksToIconMap[link]}
-          {link}
-        </Link>
-      ))}
-    </div>
+            {link}
+          </Link>
+        ))}
+      </div>
+
   );
 }
 export default KanbasNavigation;
