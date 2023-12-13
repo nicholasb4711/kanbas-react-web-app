@@ -1,0 +1,72 @@
+.list-group-item {
+    
+}
+
+.dash-title-header {
+    display: flex;
+    flex: 1;
+    align-items: center; 
+    margin-top: 0px;
+    margin-right: 24px;
+    margin-bottom: 0px;
+    margin-left: 24px;
+    line-height: 1.125;
+    font-size: 2.375rem;
+    font-weight: 300;
+    min-height: 4.5rem;
+    /* border-bottom: 1px solid #c7cdd1; */
+}
+
+.dash-subtitle-header {
+    display: flex;
+    flex: 1;
+    align-items: center; 
+    margin-top: 0px;
+    margin-right: 24px;
+    margin-bottom: 0px;
+    margin-left: 24px;
+    line-height: 1.125;
+    font-size: 1.75rem;
+    font-weight: 400;
+    /* min-height: 4.5rem; */
+    /* border-bottom: 1px solid #c7cdd1; */
+}
+
+.dash-course-link {
+    text-decoration: none;
+    color: inherit;
+
+}
+
+.dash-course-link:hover {
+    color: #D41B2C;
+    text-decoration: underline;
+}
+
+.card {
+    margin-top: 30px;
+    margin-bottom: 36px;
+    margin-right: 6px;
+    margin-left: 6px;
+    min-width: 250px;
+    max-width: 270px;
+}
+
+.card-header {
+    height: 146px;
+}
+
+.card-title {
+    color: blue;
+}
+
+.content-area-wrapper {
+    flex: 1;
+}
+
+.right-side-wrapper {
+    display: block;
+    max-width: 288px;
+    min-width: 200px;
+    padding-left: 24px;
+}

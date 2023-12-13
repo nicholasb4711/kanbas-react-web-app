@@ -1,4 +1,5 @@
 import ModuleList from "../Modules/ModuleList";
+import "../Modules/index.css";
 
 function Home() {
     return (

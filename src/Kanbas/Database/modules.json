@@ -52,5 +52,23 @@
       "name": "Spacecraft Systems Engineering",
       "description": "Overview of spacecraft systems and subsystems engineering.",
       "course": "RS103"
+    },
+    {
+      "_id": "M401",
+      "name": "HTML Basics",
+      "description": "Introduction to HTML and building the structure of web pages.",
+      "course": "CS4550"
+    },
+    {
+      "_id": "M402",
+      "name": "Styling with CSS",
+      "description": "Using CSS to create visually engaging web pages.",
+      "course": "CS4550"
+    },
+    {
+      "_id": "M403",
+      "name": "JavaScript for Interactivity",
+      "description": "Implementing interactive features with JavaScript.",
+      "course": "CS4550"
     }
   ]

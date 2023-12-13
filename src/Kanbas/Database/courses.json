@@ -1,14 +1,58 @@
 [
-    { "_id": "RS101",
-      "name": "Rocket Propulsion", "number": "RS4550", "startDate": "2023-01-10",
-      "endDate": "2023-05-15"
-    },
-    { "_id": "RS102",
-      "name": "Aerodynamics", "number": "RS4560", "startDate": "2023-01-10", "endDate": "2023-05-15"
-    },
-    { "_id": "RS103",
-      "name": "Spacecraft Design", "number": "RS4570", "startDate": "2023-01-10", "endDate": "2023-05-15"
-    }
-    
-  ]
-  
+  {
+    "_id": "RS101",
+    "name": "Rocket Propulsion",
+    "number": "RS4550",
+    "startDate": "2023-01-10",
+    "endDate": "2023-05-15"
+  },
+  {
+    "_id": "RS102",
+    "name": "Aerodynamics",
+    "number": "RS4560",
+    "startDate": "2023-01-10",
+    "endDate": "2023-05-15"
+  },
+  {
+    "_id": "RS103",
+    "name": "Spacecraft Design",
+    "number": "RS4570",
+    "startDate": "2023-01-10",
+    "endDate": "2023-05-15"
+  },
+  {
+    "_id": "CS4550",
+    "name": "Web Development",
+    "number": "CS4550.12631.202410",
+    "startDate": "2023-09-05",
+    "endDate": "2023-12-15"
+  },
+  {
+    "_id": "CS3650",
+    "name": "Computer Systems",
+    "number": "CS3650.MERGED.202410",
+    "startDate": "2023-09-05",
+    "endDate": "2023-12-15"
+  },
+  {
+    "_id": "COOP3945",
+    "name": "Co-op Work Experience SEC 155",
+    "number": "COOP3945.41981.202240",
+    "startDate": "2023-05-01",
+    "endDate": "2023-08-15"
+  },
+  {
+    "_id": "FINA1209",
+    "name": "Personal Finance SEC 04 Fall 2023",
+    "number": "FINA1209.17918.202410",
+    "startDate": "2023-09-05",
+    "endDate": "2023-12-15"
+  },
+  {
+    "_id": "HIST2220",
+    "name": "History of Technology SEC 02 Fall 2023",
+    "number": "HIST2220.15200.202410",
+    "startDate": "2023-09-05",
+    "endDate": "2023-12-15"
+  }
+]
