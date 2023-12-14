@@ -4,49 +4,10 @@ import db from "../Database";
 import { BsBack } from "react-icons/bs";
 import "./index.css";
 
-function Dashboard() {
-  const [courses, setCourses] = useState(db.courses);
-  const [course, setCourse] = useState({
-
-    name: "New Course", number: "New Number",
-    startDate: "2023-09-10", endDate: "2023-12-15",
-  });
-  const addNewCourse = () => {
-    setCourses([...courses,
-    {
-      ...course,
-      _id: new Date().getTime()
-    }]);
-  };
-  // Function to generate random color
-  const getRandomColor = () => {
-    const letters = '0123456789ABCDEF';
-    let color = '#';
-    for (let i = 0; i < 6; i++) {
-      color += letters[Math.floor(Math.random() * 16)];
-    }
-    return color;
-  };
-
-
-  const updateCourse = () => {
-    setCourses(
-      courses.map((c) => {
-        if (c._id === course._id) {
-          return course;
-        } else {
-          return c;
-        }
-      })
-    );
-  };
-
-
-  const deleteCourse = (courseId) => {
-    setCourses(courses.filter((course) => course._id !== courseId));
-  };
-
-
+function Dashboard(
+  { courses, course, setCourse, addNewCourse,
+  deleteCourse, updateCourse, getRandomColor }
+) {
 
 
   return (
@@ -89,20 +50,20 @@ function Dashboard() {
               <div class="card-body">
                 <Link key={course._id} to={`/Kanbas/Courses/${course._id}`} className="dash-course-link">
                   <h5 class="card-title" style={{ color: courseColor }}>{course._id} {course.name}</h5>
-                  
+
                 </Link>
                 <button className="btn btn-warning" onClick={(event) => {
-                    event.preventDefault();
-                    setCourse(course);
-                  }}>Update</button>
-                  <button className="btn btn-danger" onClick={(event) => {
-                    event.preventDefault();
-                    deleteCourse(course._id);
-                  }}>
-                    Delete
-                  </button>
-                  <p class="card-text">CS4550.12631.202410
-                    202410_1 Fall 2023 Semester Full Term</p>
+                  event.preventDefault();
+                  setCourse(course);
+                }}>Update</button>
+                <button className="btn btn-danger" onClick={(event) => {
+                  event.preventDefault();
+                  deleteCourse(course._id);
+                }}>
+                  Delete
+                </button>
+                <p class="card-text">CS4550.12631.202410
+                  202410_1 Fall 2023 Semester Full Term</p>
               </div>
             </div>
           );
