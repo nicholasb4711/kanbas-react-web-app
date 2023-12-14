@@ -4,9 +4,20 @@ import db from "../Database";
 import { BsBack } from "react-icons/bs";
 import "./index.css";
 
-function Dashboard({ courses, course, setCourses, setCourse, addCourse, deleteCourse, updateCourse }) {
+function Dashboard() {
+  const [courses, setCourses] = useState(db.courses);
+  const [course, setCourse] = useState({
 
-
+    name: "New Course", number: "New Number",
+    startDate: "2023-09-10", endDate: "2023-12-15",
+  });
+  const addNewCourse = () => {
+    setCourses([...courses,
+    {
+      ...course,
+      _id: new Date().getTime()
+    }]);
+  };
   // Function to generate random color
   const getRandomColor = () => {
     const letters = '0123456789ABCDEF';
@@ -18,64 +29,85 @@ function Dashboard({ courses, course, setCourses, setCourse, addCourse, deleteCo
   };
 
 
+  const updateCourse = () => {
+    setCourses(
+      courses.map((c) => {
+        if (c._id === course._id) {
+          return course;
+        } else {
+          return c;
+        }
+      })
+    );
+  };
+
+
+  const deleteCourse = (courseId) => {
+    setCourses(courses.filter((course) => course._id !== courseId));
+  };
+
+
+
+
   return (
     <div className="d-flex-col" style={{ padding: 24 }}>
       <h1>Dashboard</h1>
       <hr />
       <div className="d-flex">
         <h2>Published Courses ({courses.length})</h2>
+        <div className="d-flex">
+          <input
+            type="text"
+            value={course.name}
+            onChange={(e) => addNewCourse(e.target.value)}
+            className="form-control"
+            placeholder="Enter course title"
+            style={{ width: '25%', marginLeft: 'auto' }}
+          />
 
-        <input
-          type="text"
-          value={course.name}
-          onChange={(e) => {
-            setCourse({ ...course, name: e.target.value });
-          }}
-        />
-        <button className="btn btn-success" onClick={() => addCourse(course)}>Add Course</button>
-        <button className="btn btn-primary" onClick={() => updateCourse(course)}>Update</button>
+          <input value={course.name} className="form-control" onChange={(e) => setCourse({ ...course, name: e.target.value })} />
+          <input value={course.number} className="form-control" onChange={(e) => setCourse({ ...course, number: e.target.value })} />
+          <input value={course.startDate} className="form-control" type="date" onChange={(e) => setCourse({ ...course, startDate: e.target.value })} />
+          <input value={course.endDate} className="form-control" type="date" onChange={(e) => setCourse({ ...course, endDate: e.target.value })} />
+
+          <button className="btn btn-success" onClick={addNewCourse}>Add Course</button>
+          <button className="btn btn-primary" onClick={updateCourse}>Update</button>
+        </div>
+
 
       </div>
 
       <div class="d-flex flex-row flex-wrap" style={{ '--bs-gutter-x': 0 }}>
-
-        {courses.map((course, index) => {
+        {courses.map((course) => {
           const courseColor = getRandomColor();
           return (
             <div class="card">
-              <Link key={index} to={`/Kanbas/Courses/${course._id}`} className="dash-course-link">
+              <Link key={course._id} to={`/Kanbas/Courses/${course._id}`} className="dash-course-link">
                 <div class="card-header" style={{ background: courseColor }}></div>
               </Link>
 
               <div class="card-body">
-                <Link to={`/Kanbas/Courses/${course._id}`} className="dash-course-link">
+                <Link key={course._id} to={`/Kanbas/Courses/${course._id}`} className="dash-course-link">
                   <h5 class="card-title" style={{ color: courseColor }}>{course._id} {course.name}</h5>
-                  <button
-                    onClick={(e) => {
-                      e.preventDefault();
-                      deleteCourse(course);
-                    }}
-                  >Delete</button>
-                  <button
-                    onClick={(e) => {
-                      e.preventDefault();
-                      setCourse(course);
-                    }}
-                  >
-                    Edit
+                  
+                </Link>
+                <button className="btn btn-warning" onClick={(event) => {
+                    event.preventDefault();
+                    setCourse(course);
+                  }}>Update</button>
+                  <button className="btn btn-danger" onClick={(event) => {
+                    event.preventDefault();
+                    deleteCourse(course._id);
+                  }}>
+                    Delete
                   </button>
                   <p class="card-text">CS4550.12631.202410
                     202410_1 Fall 2023 Semester Full Term</p>
-                </Link>
-                <button className="btn btn-warning" onClick={() => setCourse(course)}>Edit</button>
-                <button className="btn btn-danger" onClick={() => deleteCourse(course)}>Delete</button>
               </div>
             </div>
           );
         })}
-        <pre>
-        <code>{JSON.stringify(courses, null, 2)}</code>
-      </pre>
+
       </div>
     </div>
   );
