@@ -1,40 +1,41 @@
+import React, { useState } from "react";
+import { Routes, Route, Navigate } from "react-router-dom";
+import { Provider } from "react-redux";
 import KanbasNavigation from "./KanbasNavigation";
-import { Routes, Route } from "react-router-dom";
 import Dashboard from "./Dashboard";
 import Courses from "./Courses";
 import db from "./Database";
-import { useState } from "react";
 import store from "./store";
-import { Provider } from "react-redux";
 
 function Kanbas() {
     const [courses, setCourses] = useState(db.courses);
     const [course, setCourse] = useState({
-        name: "New Course",
-        number: "New Course Number",
-        startDate: new Date(),
-        endDate: new Date(),
+        name: "New Course", number: "New Number",
+        startDate: new Date(), endDate: new Date(),
     });
-    const addCourse = () => {
-        setCourses([
-            { ...course, _id: new Date().getTime().toString() },
-            ...courses,
-        ]);
-        setCourse({ name: "" });
-    };
-    const deleteCourse = (course) => {
-        setCourses(courses.filter((c) => c._id !== course._id));
-    };
-    const updateCourse = (course) => {
+
+    const updateCourse = () => {
         setCourses(
             courses.map((c) => {
                 if (c._id === course._id) {
                     return course;
+                } else {
+                    return c;
                 }
-                return c;
             })
         );
+    };
+
+    const addCourse = () => {
+        setCourses([
+          { ...course, _id: new Date().getTime().toString() },
+          ...courses,
+        ]);
         setCourse({ name: "" });
+      };
+
+    const deleteCourse = (id) => {
+        setCourses(courses.filter(course => course._id !== id));
     };
 
     return (
@@ -46,8 +47,7 @@ function Kanbas() {
                         <Route path="Account" element={<h1>Account</h1>} />
                         <Route
                             path="Dashboard"
-                            element={
-                                <Dashboard
+                            element={<Dashboard
                                     courses={courses}
                                     setCourses={setCourses}
                                     course={course}
@@ -69,4 +69,5 @@ function Kanbas() {
         </Provider>
     );
 }
+
 export default Kanbas;
