@@ -4,8 +4,19 @@ import { Link, useParams, useNavigate } from "react-router-dom";
 import "./index.css";
 import "../../index.css";
 import { FaCheck, FaCheckCircle, FaEllipsisV } from "react-icons/fa";
+import { useDispatch } from "react-redux";
+import {
+  addAssignment,
+  deleteAssignment,
+  updateAssignment,
+  selectAssignment,
+} from "./assignmentsReducer";
 
-function AssignmentEditor() {
+function AssignmentEditor(addAssignment, deleteAssignment, updateAssignment, selectAssignment) {
+  const dispatch = useDispatch();
+  const assignments = useSelector((state) => state.assignmentReducer.assignments);
+  const assignment = useSelector((state) => state.assignmentReducer.assignment);
+
   const { assignmentId, courseId } = useParams();
   const assignment = db.assignments.find((a) => a._id === assignmentId);
   const navigate = useNavigate();
@@ -18,7 +29,7 @@ function AssignmentEditor() {
     <div className="assignments-main">
       <div className="header-bar d-flex flex-row justify-content-end">
         <FaCheckCircle className="fas fa-lg" style={{ color: "#46c22e" }} />
-        <p style={{ color: "#46c22e", margin: 0}}>Published</p>
+        <p style={{ color: "#46c22e", margin: 0 }}>Published</p>
 
 
 

@@ -9,9 +9,9 @@ import AssignmentEditor from './Assignments/AssignmentEditor';
 import Grades from './Grades';
 import TopElement from '../TopElement';
 
-function Courses() {
+function Courses({courses}) {
     const { courseId } = useParams();
-    const course = db.courses.find((course) => course._id === courseId);
+    const course = courses.find((course) => course._id === courseId);
     const { pathname } = useLocation();
     // Extract the current location (e.g., Home, Modules) from the pathname
     const currentLocation = pathname.split('/').pop();

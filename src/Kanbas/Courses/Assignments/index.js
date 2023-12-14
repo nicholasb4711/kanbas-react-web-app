@@ -3,14 +3,22 @@ import { Link, useParams } from "react-router-dom";
 import db from "../../Database";
 import "./index.css";
 import "../Modules/index.css";
+import { useSelector, useDispatch } from "react-redux";
 import { FaCheckCircle, FaEllipsisV, FaFileAlt, FaPlus } from "react-icons/fa";
+import {
+  addAssignment,
+  deleteAssignment,
+  updateAssignment,
+  selectAssignment,
+} from "./assignmentsReducer";
 
 
 function Assignments() {
   const { courseId } = useParams();
-  const assignments = db.assignments;
-  const courseAssignments = assignments.filter(
-    (assignment) => assignment.course === courseId);
+  const assignments = useSelector((state) => state.assignmentsReducer.assignments);
+  const assignment = useSelector((state) => state.assignmentsReducer.assignments);
+  const dispatch = useDispatch();
+
   return (
     <div className="d-flex-col assignments-main flex-fill">
       <div className="header-bar d-flex flex-row justify-content-between">
@@ -44,7 +52,26 @@ function Assignments() {
 
           </li>
 
-          {courseAssignments.map((assignment) => (
+          <li>
+            <button
+              onClick={() => dispatch(addAssignment({ ...assignment, course: courseId }))}>
+              Add
+            </button>
+            <button
+              onClick={() => dispatch(updateAssignment(assignment))}>
+              Update
+            </button>
+            <input value={assignment.name}
+              onChange={(e) => dispatch(selectAssignment({ ...assignment, name: e.target.value }))}
+            />
+            <textarea value={assignment.description}
+              onChange={(e) => dispatch(selectAssignment({ ...assignment, description: e.target.value }))}
+
+            />
+          </li>
+
+
+          {assignments.map((assignment) => (
             <li key={assignment._id} className="list-group-item module-align" style={{ display: "flex" }}>
               <FaFileAlt className="far fa-lg fa-file" style={{ color: "#9c9c9c", fontSize: 25 }} />
               <div className="assignments-info d-flex-col me-auto">
@@ -55,6 +82,14 @@ function Assignments() {
                 </div>
                 <div className="assignment-details">Due Sep 18,2022 at 11:59pm | 100 pts</div>
               </div>
+              <button
+                onClick={() => dispatch(selectAssignment(assignment))}>
+                Edit
+              </button>
+              <button
+                onClick={() => dispatch(deleteAssignment(assignment._id))}>
+                Delete
+              </button>
               <FaCheckCircle className="fas fa-lg check" style={{ color: "#46c22e" }} />
               <FaEllipsisV className="fas fa-lg" style={{ color: "#9c9c9c" }} />
             </li>
@@ -63,7 +98,7 @@ function Assignments() {
 
         </ul>
       </div>
-    </div>
+    </div >
   );
 }
 export default Assignments;
