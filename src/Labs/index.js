@@ -2,11 +2,14 @@ import { Routes, Route, Link, Navigate, useLocation } from "react-router-dom";
 import Assignment3 from "./a3";
 import Assignment4 from "./a4";
 import Assignment5 from "./a5";
+import store from "./store";
+import { Provider } from "react-redux";
 
 function Labs() {
     const { pathname } = useLocation();
     return (
         <div>
+            <Provider store={store}>
             <Link to="/HelloWorld">Hello World</Link>
             <br />
             <Link to="/Labs">Labs</Link>
@@ -33,6 +36,7 @@ function Labs() {
                     <Route path="a5" element={<Assignment5 />} />
                 </Routes>
             </div>
+            </Provider>
         </div>
     );
 }
