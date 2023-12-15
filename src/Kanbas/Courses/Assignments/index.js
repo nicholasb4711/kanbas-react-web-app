@@ -1,5 +1,6 @@
 import React from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useNavigate } from "react-router-dom";
+import { useState, getState } from "react";
 import db from "../../Database";
 import "./index.css";
 import "../Modules/index.css";
@@ -16,8 +17,32 @@ import {
 function Assignments() {
   const { courseId } = useParams();
   const assignments = useSelector((state) => state.assignmentsReducer.assignments);
-  const assignment = useSelector((state) => state.assignmentsReducer.assignments);
+  const assignment = useSelector((state) => state.assignmentsReducer.assignment);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const handleAddAssignment = async () => {
+    const newAssignment = {
+      ...assignment,
+      _id: new Date().getTime().toString(),
+    };
+    dispatch(addAssignment({ ...newAssignment, course: courseId }));
+    dispatch(selectAssignment(newAssignment));
+    console.log("Actually add the assignment TBD");
+    navigate(`/Kanbas/Courses/${courseId}/Assignments/AssignmentEditor/${newAssignment._id}`);
+  }
+
+  function handleDeleteAssignment(id) {
+    if (window.confirm("Are you sure you want to remove this assignment?")) {
+      dispatch(deleteAssignment(id));
+    }
+  }
+
+  const handleEditAssignment = async (assignment) => {
+    dispatch(selectAssignment(assignment));
+    console.log("Actually add the assignment TBD");
+    navigate(`/Kanbas/Courses/${courseId}/Assignments/AssignmentEditor/${assignment._id}`);
+  }
 
   return (
     <div className="d-flex-col assignments-main flex-fill">
@@ -28,9 +53,13 @@ function Assignments() {
             <FaPlus className="fas fa-sm" style={{ color: "#9c9c9c", marginRight: "9px" }} />
             Group</button>
 
-          <button className="btn-danger">
+          <button onClick={() => handleAddAssignment()}
+            className="btn-danger" to={`/Kanbas/Courses/${courseId}/Assignments/${assignment._id}`}>
             <FaPlus className="fas fa-lg" style={{ color: "white", marginRight: "9px" }} />Assignment
           </button>
+
+
+
           <button className="btn-secondary btn-ellipsis">
             <FaEllipsisV className="fas fa-lg" style={{ color: "#9c9c9c" }} />
           </button>
@@ -52,23 +81,6 @@ function Assignments() {
 
           </li>
 
-          <li>
-            <button
-              onClick={() => dispatch(addAssignment({ ...assignment, course: courseId }))}>
-              Add
-            </button>
-            <button
-              onClick={() => dispatch(updateAssignment(assignment))}>
-              Update
-            </button>
-            <input value={assignment.name}
-              onChange={(e) => dispatch(selectAssignment({ ...assignment, name: e.target.value }))}
-            />
-            <textarea value={assignment.description}
-              onChange={(e) => dispatch(selectAssignment({ ...assignment, description: e.target.value }))}
-
-            />
-          </li>
 
 
           {assignments.map((assignment) => (
@@ -83,11 +95,13 @@ function Assignments() {
                 <div className="assignment-details">Due Sep 18,2022 at 11:59pm | 100 pts</div>
               </div>
               <button
-                onClick={() => dispatch(selectAssignment(assignment))}>
+                onClick={() => handleEditAssignment(assignment)}
+                className="btn-secondary">
                 Edit
               </button>
               <button
-                onClick={() => dispatch(deleteAssignment(assignment._id))}>
+                onClick={() => handleDeleteAssignment(assignment._id)}
+                className="btn btn-danger">
                 Delete
               </button>
               <FaCheckCircle className="fas fa-lg check" style={{ color: "#46c22e" }} />

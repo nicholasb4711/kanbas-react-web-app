@@ -28,7 +28,7 @@ function Courses({courses}) {
                     <Route path="Modules" element={<Modules />} />
                     <Route path="Piazza" element={<Navigate to={`https://piazza.com/class/lm1gi2uzv1x402`} />} />
                     <Route path="Assignments/*" element={<Assignments />} />
-                    <Route path="Assignments/:assignmentId/*" element={<AssignmentEditor />} />
+                    <Route path="Assignments/AssignmentEditor/:assignmentId" element={<AssignmentEditor />} />
                     <Route path="Grades" element={<Grades />} />
                 </Routes>
 
