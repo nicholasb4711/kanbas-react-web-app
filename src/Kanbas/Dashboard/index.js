@@ -17,14 +17,7 @@ function Dashboard(
       <div className="d-flex">
         <h2>Published Courses ({courses.length})</h2>
         <div className="d-flex">
-          <input
-            type="text"
-            value={course.name}
-            onChange={(e) => addNewCourse(e.target.value)}
-            className="form-control"
-            placeholder="Enter course title"
-            style={{ width: '25%', marginLeft: 'auto' }}
-          />
+          
 
           <input value={course.name} className="form-control" onChange={(e) => setCourse({ ...course, name: e.target.value })} />
           <input value={course.number} className="form-control" onChange={(e) => setCourse({ ...course, number: e.target.value })} />

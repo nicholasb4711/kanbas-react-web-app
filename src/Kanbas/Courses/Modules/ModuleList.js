@@ -21,22 +21,25 @@ function ModuleList() {
     <ul className="list-group module-group">
       <li className="list-group-item">
         <button
-          onClick={() => dispatch(addModule({ ...module, course: courseId }))}>
+          onClick={() => dispatch(addModule({ ...module, course: courseId }))}
+          className="btn btn-success">
           Add
         </button>
         <button
-          onClick={() => dispatch(updateModule(module))}>
+          onClick={() => dispatch(updateModule(module))}
+          className="btn btn-secondary">
           Update
         </button>
 
 
         <input value={module.name}
           onChange={(e) => dispatch(setModule({ ...module, name: e.target.value }))}
+          className="form-control" />
 
-        />
+        
         <textarea value={module.description}
           onChange={(e) => dispatch(setModule({ ...module, description: e.target.value }))}
-
+          className="form-control"
         />
       </li>
 
@@ -45,12 +48,14 @@ function ModuleList() {
         .map((module, index) => (
           <li key={index} className="list-group-item">
             <button
-              onClick={() => dispatch(setModule(module))}>
+              onClick={() => dispatch(setModule(module))}
+              className="btn btn-warning">
               Edit
             </button>
 
             <button
-              onClick={() => dispatch(deleteModule(module._id))}>
+              onClick={() => dispatch(deleteModule(module._id))}
+              className="btn btn-danger">
               Delete
             </button>
 
