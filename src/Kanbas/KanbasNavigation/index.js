@@ -29,9 +29,8 @@ function KanbasNavigation() {
         <img src="/images/NU_Logo.png"></img>
 
         {links.map((link, index) => (
-          <li>
+          <li key={index}>
             <Link
-              key={index}
               to={`/Kanbas/${link}`}
               className={`list-group-item ${pathname.includes(link) && "active"}`}>
               <div className="menu-icon">{linksToIconMap[link]}</div>
